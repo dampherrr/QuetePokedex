@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -8,23 +8,36 @@
 
 
 }
+div .backcolor {
+box-shadow: 0 50px 0 0 white, 0 -50px 0 0 red;
 
+}
 .pokemon-img {
   background-color: white;
   border-radius: 3%;
   box-shadow: inset 0 0 10px 5px black;
-  width: 800px;
+  width: 600px;
+  z-index: 500;
 }
 
 h1 {
   color: white;
 
 }
+.pokemon-number{
+  opacity: 0.5;
+  position: absolute;
+  font-size: 150px;
+  z-index: 0;
+  text-shadow: 0 0 5px black;
+
+}
 
 div {
-  background-color: rgb(53, 105, 65);
   border-radius: 3%;
-
+}
+.pokemon-card {
+  box-shadow: inset 0 0 10px 5px black;
 }
 
 button {
