@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import PokemonCard from './components/PokemonCard';
-// import "./App.css";
 import React, { useState } from 'react';
+import PokemonCard from './components/PokemonCard';
+import NavBarComponent from './components/NavBar';
 
 const App = () => {
     const pokemonList = [
@@ -16,30 +16,16 @@ const App = () => {
 
     const [pokemonIndex, setPokemonIndex] = useState(0);
 
-    const nextPokemon = () => {
-        if (pokemonIndex < pokemonList.length - 1) {
-            setPokemonIndex(pokemonIndex + 1);
-        }
-    };
-
-    const previousPokemon = () => {
-        if (pokemonIndex > 0) {
-            setPokemonIndex(pokemonIndex - 1);
-        }
-    };
-
     return (
         <div>
             <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-            <button onClick={previousPokemon} disabled={pokemonIndex === 0}>
-                Précédent
-            </button>
-            <button onClick={nextPokemon} disabled={pokemonIndex === pokemonList.length - 1}>
-                Suivant
-            </button>
+            <NavBarComponent 
+                pokemonIndex={pokemonIndex} 
+                setPokemonIndex={setPokemonIndex} 
+                pokemonList={pokemonList} 
+            />
         </div>
     );
-}
+};
 
 export default App;
-
