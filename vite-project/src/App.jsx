@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import PokemonCard from './components/PokemonCard';
 // import "./App.css";
-
+import React, { useState } from 'react';
 
 const App = () => {
     const pokemonList = [
@@ -13,22 +14,32 @@ const App = () => {
         { name: "mew", url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png" }
     ];
 
+    const [pokemonIndex, setPokemonIndex] = useState(0);
+
+    const nextPokemon = () => {
+        if (pokemonIndex < pokemonList.length - 1) {
+            setPokemonIndex(pokemonIndex + 1);
+        }
+    };
+
+    const previousPokemon = () => {
+        if (pokemonIndex > 0) {
+            setPokemonIndex(pokemonIndex - 1);
+        }
+    };
+
     return (
         <div>
-            <PokemonCard pokemon={pokemonList[0]} />
+            <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+            <button onClick={previousPokemon} disabled={pokemonIndex === 0}>
+                Précédent
+            </button>
+            <button onClick={nextPokemon} disabled={pokemonIndex === pokemonList.length - 1}>
+                Suivant
+            </button>
         </div>
     );
 }
 
 export default App;
 
-
-// function App() {
-//   return (
-//     <div>
-//       <PokemonCard />
-//     </div>
-//   );
-// }
-
-// export default App;

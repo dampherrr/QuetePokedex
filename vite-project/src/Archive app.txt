@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+//promp.2
+//     return (
+//         <div>
+//             <PokemonCard pokemon={pokemonList[0]} />
+//         </div>
+//     );
+// }
+
+// export default App;
+
+//prompt.1
+// function App() {
+//   return (
+//     <div>
+//       <PokemonCard />
+//     </div>
+//   );
+// }
+
+// export default App;
